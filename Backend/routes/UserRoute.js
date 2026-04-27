@@ -64,6 +64,8 @@ import {
     viewDataGajiSinglePegawaiByYear
 } from '../controllers/Pegawai.js';
 
+import { createOvertime } from "../controllers/OvertimeController.js";
+
 const router = express.Router();
 
 // Admin Route :
@@ -103,6 +105,8 @@ router.get('/data_gaji_pegawai', viewDataGajiPegawai);
 router.get('/data_gaji/name/:name', verifyUser, viewDataGajiByName);
 router.get('/data_gaji_pegawai/month/:month', viewDataGajiPegawaiByMonth);
 router.get('/data_gaji_pegawai/year/:year', viewDataGajiPegawaiByYear);
+// Data Overtime
+router.post('/data_overtime', verifyUser, adminOnly, createOvertime);
 
 /* ====  Laporan  ==== */
 // laporan Gaji Pegawai
