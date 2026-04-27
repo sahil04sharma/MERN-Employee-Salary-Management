@@ -70,7 +70,7 @@ const DetailDataGaji = () => {
                 <div className='flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between'>
                 </div>
 
-                <div className='max-w-full overflow-x-auto'>
+                <div className='w-full overflow-x-auto'>
                     <div className='md:w-2/3'>
                         <div className='w-full md:text-lg'>
                             <h2 className='font-medium mb-4 block text-black dark:text-white'>
@@ -103,7 +103,7 @@ const DetailDataGaji = () => {
                             </h2>
                         </div>
                     </div>
-                    <table className='w-full table-auto'>
+                    <table className='min-w-[600px] w-full table-auto'>
                         <thead>
                             <tr className='bg-gray-2 text-left dark:bg-meta-4'>
                                 <th className='py-4 px-4 font-medium text-black dark:text-white'>

@@ -42,9 +42,12 @@ const DataGajiPegawai = () => {
   const onSubmitPrint = async () => {
 
     try {
-      const yearData = viewGajiSinglePegawaiByYear(dataYear);
-      const monthData = viewGajiSinglePegawaiByMonth(dataMonth);
-      const nameData = viewGajiSinglePegawaiByName(nama_pegawai);
+      // const yearData = viewGajiSinglePegawaiByYear(dataYear);
+      // const monthData = viewGajiSinglePegawaiByMonth(dataMonth);
+      // const nameData = viewGajiSinglePegawaiByName(nama_pegawai);
+      const onSubmitPrint = () => {
+        navigate(`/data-gaji-pegawai/print-page?month=${dataMonth}&year=${dataYear}&name=${nama_pegawai}`);
+      };
 
       if (yearData.length > 0 && monthData.length > 0 && nameData.length > 0) {
         navigate(`/data-gaji-pegawai/print-page?month=${dataMonth}&year=${dataYear}&name=${nama_pegawai}`);
@@ -121,9 +124,13 @@ const DataGajiPegawai = () => {
         const response = await axios.get(`http://localhost:5000/data_gaji/name/${nama_pegawai}`);
         const data = response.data;
 
-        setDataGajiPegawai(data);
-        setDataMonth(data[0].bulan);
-        setDataYear(data[0].tahun);
+        if (Array.isArray(data) && data.length > 0) {
+          setDataGajiPegawai(data);
+          setDataMonth(data[0].bulan);
+          setDataYear(data[0].tahun);
+        } else {
+          setDataGajiPegawai([]);
+        }
       } catch (error) {
         console.log(error);
       }

@@ -30,7 +30,8 @@ const DataGaji = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
 
-    const filteredDataGaji = dataGaji.filter((gajiDataPegawai) => {
+    const safeDataGaji = Array.isArray(dataGaji) ? dataGaji : [];
+    const filteredDataGaji = safeDataGaji.filter((gajiDataPegawai) => {
         const isMatchBulan =
             filterBulan === "" ||
             (typeof gajiDataPegawai.bulan === 'string' &&

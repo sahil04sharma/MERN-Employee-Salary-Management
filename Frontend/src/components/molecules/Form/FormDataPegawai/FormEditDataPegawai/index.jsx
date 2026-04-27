@@ -14,6 +14,7 @@ const FormEditDataPegawai = () => {
     const [username, setUsername] = useState('');
     const [jenisKelamin, setJenisKelamin] = useState('');
     const [jabatan, setJabatan] = useState('');
+    const [designation, setDesignation] = useState('');
     const [tanggalMasuk, setTanggalMasuk] = useState('');
     const [status, setStatus] = useState('');
     const [hakAkses, setHakAkses] = useState('');
@@ -33,6 +34,7 @@ const FormEditDataPegawai = () => {
             formData.append('username', username);
             formData.append('jenis_kelamin', jenisKelamin);
             formData.append('jabatan', jabatan);
+            formData.append('designation', designation);
             formData.append('tanggal_masuk', tanggalMasuk);
             formData.append('status', status);
             formData.append('hak_akses', hakAkses);
@@ -59,7 +61,7 @@ const FormEditDataPegawai = () => {
             });
         }
     };
-    
+
     useEffect(() => {
         const getUserById = async () => {
             try {
@@ -70,6 +72,7 @@ const FormEditDataPegawai = () => {
                 setUsername(data.username);
                 setJenisKelamin(data.jenis_kelamin);
                 setJabatan(data.jabatan);
+                setDesignation(data.designation || '');
                 setTanggalMasuk(data.tanggal_masuk);
                 setStatus(data.status);
                 setHakAkses(data.hak_akses);
@@ -196,6 +199,18 @@ const FormEditDataPegawai = () => {
                                             required={true}
                                             placeholder='Masukkan jabatan'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
+                                        />
+                                    </div>
+                                    <div className='w-full xl:w-1/2'>
+                                        <label className='mb-2.5 block text-black dark:text-white'>
+                                            Designation
+                                        </label>
+                                        <input
+                                            type='text'
+                                            value={designation}
+                                            onChange={(e) => setDesignation(e.target.value)}
+                                            placeholder='Masukkan designation'
+                                            className='w-full rounded border-[1.5px] border-stroke py-3 px-5'
                                         />
                                     </div>
                                     <div className='w-full xl:w-1/2'>

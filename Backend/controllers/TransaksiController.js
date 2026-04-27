@@ -447,11 +447,19 @@ export const getDataGajiPegawai = async () => {
       const potongan = potongan_pegawai.find(
         (potongan) => potongan.nama_pegawai === pegawai.nama_pegawai
       );
-      const total_gaji =
-      (pegawai.gaji_pokok +
-      pegawai.tj_transport +
-      pegawai.uang_makan -
-      (potongan ? potongan.total_potongan : 0)).toLocaleString();
+      // const total_gaji =
+      // (pegawai.gaji_pokok +
+      // pegawai.tj_transport +
+      // pegawai.uang_makan -
+      // (potongan ? potongan.total_potongan : 0)).toLocaleString();
+      const baseSalary =
+        Math.max(0, pegawai.gaji_pokok) +
+        Math.max(0, pegawai.tj_transport) +
+        Math.max(0, pegawai.uang_makan);
+
+      const deduction = potongan ? potongan.total_potongan : 0;
+
+      const total_gaji = Math.max(0, baseSalary - deduction).toLocaleString();
 
       return {
         tahun: potongan ? potongan.tahun : kehadiran ? kehadiran.tahun : 0,

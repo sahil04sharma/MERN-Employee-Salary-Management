@@ -17,6 +17,7 @@ const FormAddDataPegawai = () => {
         confPassword: '',
         jenisKelamin: '',
         jabatan: '',
+        designation: '',
         tanggalMasuk: '',
         title: '',
         file: '',
@@ -33,6 +34,7 @@ const FormAddDataPegawai = () => {
         confPassword,
         jenisKelamin,
         jabatan,
+        designation,
         tanggalMasuk,
         title,
         file,
@@ -78,6 +80,7 @@ const FormAddDataPegawai = () => {
         newFormData.append('confPassword', confPassword);
         newFormData.append('jenis_kelamin', jenisKelamin);
         newFormData.append('jabatan', jabatan);
+        newFormData.append('designation', designation);
         newFormData.append('tanggal_masuk', tanggalMasuk);
         newFormData.append('status', status);
         newFormData.append('hak_akses', hak_akses);
@@ -270,6 +273,20 @@ const FormAddDataPegawai = () => {
                                             required={true}
                                             placeholder='Masukkan jabatan'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
+                                        />
+                                    </div>
+                                    <div className='w-full xl:w-1/2'>
+                                        <label className='mb-2.5 block text-black dark:text-white'>
+                                            Designation <span className='text-meta-1'>*</span>
+                                        </label>
+                                        <input
+                                            type='text'
+                                            name='designation'
+                                            value={designation}
+                                            onChange={handleChange}
+                                            required
+                                            placeholder='Masukkan designation (e.g. Frontend Developer)'
+                                            className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary'
                                         />
                                     </div>
                                     <div className='w-full xl:w-1/2'>

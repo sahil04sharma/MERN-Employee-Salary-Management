@@ -135,6 +135,7 @@ export const createDataPegawai = async (req, res) => {
                 password: hashPassword,
                 jenis_kelamin: jenis_kelamin,
                 jabatan: jabatan,
+                designation: req.body.designation,
                 tanggal_masuk: tanggal_masuk,
                 status: status,
                 photo: fileName,
@@ -174,6 +175,7 @@ export const updateDataPegawai = async (req, res) => {
             username: username,
             jenis_kelamin: jenis_kelamin,
             jabatan: jabatan,
+            designation: req.body.designation,
             tanggal_masuk: tanggal_masuk,
             status: status,
             hak_akses: hak_akses

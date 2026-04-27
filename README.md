@@ -112,6 +112,24 @@ This project was created using the following technologies.
 - [Argon2](https://www.npmjs.com/package/argon2) - A password-hashing function that summarizes the state of the art in the design of memory-hard functions and can be used to hash passwords for credential storage, key derivation, or other applications.
 - [Connect Session Sequelize](https://www.npmjs.com/package/connect-session-sequelize) - Implement authentication for users with site applications.
 
+## 🔧 Improvements & Fixes
+
+During development, several improvements and fixes were implemented:
+
+* Fixed frontend crash (`dataGaji.filter is not a function`)
+* Handled API failure cases safely using defensive checks
+* Prevented negative salary calculations using safe guards (`Math.max`)
+* Improved table responsiveness for mobile devices (horizontal scroll)
+* ✅ Added **Designation Field**:
+
+  * Integrated into database (`data_pegawai`)
+  * Added in backend (create & update APIs)
+  * Implemented in frontend (Add & Edit forms)
+  * Displayed in UI (employee table & details)
+
+These changes improved overall stability, usability, and feature completeness of the system.
+
+
 ####  Database
 
  - [MySQL ](https://www.mysql.com/) - It provides a free cloud service to store MongoDB collections.
@@ -153,56 +171,6 @@ This project was created using the following technologies.
 
 ## Meet The Teams
 
-<center>
-  <table align="center">
-    <tr >
-      <th >Backend Developer</th>
-      <th >Frontend Developer</th>
-    </tr>
-    <tr >
-      <td align="center">
-        <a href="https://github.com/AldiRamdani0401">
-          <img width="200"  src="https://res.cloudinary.com/du541igfh/image/upload/v1690573793/Blog%20Portfolio%20Gilbert/Project/mern-penggajian-karyawan/Aldi_mkw04y.jpg" alt=""><br/>
-          <b>Aldi Ramdani</b>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/berthutapea">
-          <img width="200"  src="https://res.cloudinary.com/du541igfh/image/upload/v1690573793/Blog%20Portfolio%20Gilbert/Project/mern-penggajian-karyawan/Gilbert_zx9rbq.jpg" alt=""><br/>
-          <b>Gilbert Hutapea</b>
-        </a>
-      </td>
-    </tr>
-  </table>
-</center>
 
-## Author
-- Portfolio: [berthutapea](https://berthutapea.vercel.app/)
-- Github: [berthutapea](https://github.com/berthutapea)
-- Sponsor: [berthutapea](https://saweria.co/berthutapea)
-- Linkedin: [gilberthutapea](https://www.linkedin.com/in/gilberthutapea/)
-- Email: [berthutapea@gmail.com](mailto:berthutapea@gmail.com)
 
-## License
 
-MIT License
-
-Copyright (c) 2022 Gilbert Hutapea
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
